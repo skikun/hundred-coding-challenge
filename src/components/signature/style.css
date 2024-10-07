@@ -1,0 +1,41 @@
+.signature {
+	position: fixed;
+	bottom: 2rem;
+	left: 2rem;
+
+	* {
+		user-select: none;
+	}
+
+	img {
+		width: 8rem;
+		object-fit: contain;
+	}
+
+	h4 {
+		color: var(--pearl);
+	}
+
+	h6 {
+		font-weight: 800;
+		color: var(--ski-pink);
+	}
+
+	> div {
+		flex-direction: row;
+		gap: 1rem;
+		align-items: center;
+
+		:first-child {
+			margin-bottom: 1rem;
+		}
+
+		:last-child {
+			color: var(--ski-yellow);
+		}
+
+		> *:last-child img {
+			border-bottom: 2px solid var(--pearl);
+		}
+	}
+}

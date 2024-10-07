@@ -1,0 +1,43 @@
+.type-selector {
+	flex-direction: row;
+	gap: 0.5rem;
+
+	button {
+		background: var(--ink);
+		color: var(--pearl);
+		border-radius: var(--radius-min);
+		padding: 0.5rem 1rem;
+		cursor: pointer;
+		font-size: 0.75rem;
+		font-weight: 500;
+
+		&.active {
+			background: var(--pearl);
+			color: var(--ink);
+			position: relative;
+
+			&:hover {
+				cursor: not-allowed;
+			}
+
+			&::after {
+				content: " ✓";
+				color: var(--zima);
+				font-weight: 700;
+			}
+
+			&::before {
+				content: " ";
+				position: absolute;
+				inset: 0;
+				background: var(--pearl);
+				filter: blur(0.5rem);
+				z-index: -1;
+			}
+		}
+
+		&:hover:not(.active) {
+			background: var(--ink-900);
+		}
+	}
+}

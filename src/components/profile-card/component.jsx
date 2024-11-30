@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import LINKS from "./links";
 
+import Send from "../../assets/icons/send.svg";
+
 import "./style.css";
 
 const View = () => {
@@ -34,7 +36,9 @@ const View = () => {
 				</p>
 				<div>
 					<input placeholder="Message @ski" />
-					<button>Send</button>
+					<button>
+						<img src={Send} alt="Paper plane icon" />
+					</button>
 				</div>
 			</div>
 			<div>

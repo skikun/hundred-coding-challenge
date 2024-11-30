@@ -57,8 +57,7 @@ const View = () => {
 						These set of stickers are part of a limited edition seasonal
 						accesories that includes 5 stickers with a unique design.
 					</p>
-					<hr />
-					<p>Select the size of the stickers you want to add to your cart:</p>
+					<p>Select the size of the stickers you want to order:</p>
 					<TypeButton
 						options={options}
 						onChange={(e) => setSize(e)}

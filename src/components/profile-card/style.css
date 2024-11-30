@@ -157,14 +157,34 @@
 			button {
 				display: flex;
 				line-height: 2rem;
-				padding: 0.25rem;
 				width: 2.5rem;
 				appearance: none;
 				border-radius: var(--radius-min);
-				background: var(--ink-500);
+				background: var(--zima);
 				color: var(--ink);
 				text-align: center;
 				cursor: pointer;
+				justify-content: center;
+				align-items: center;
+				min-width: 2.5rem;
+				box-shadow: 0 0 0 0 var(--zima-800);
+
+				img {
+					min-width: 2rem;
+				}
+
+				&:hover {
+					background: var(--zima-800);
+					box-shadow: 0 0 0 2px var(--zima-800);
+
+					img {
+						transform: translateX(-0.25rem) rotate(45deg);
+					}
+				}
+
+				&:active img {
+					transform: translateX(0.25rem) scale(0.9) rotate(45deg);
+				}
 			}
 		}
 

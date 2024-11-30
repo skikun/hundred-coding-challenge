@@ -29,8 +29,10 @@ section:has(.add-to-cart) {
 		h5 {
 			&::after {
 				content: " COP";
-				color: var(--zima);
 				font-weight: 700;
+				opacity: 0.75;
+				font-weight: 300;
+				font-size: 0.75rem;
 			}
 		}
 
@@ -38,10 +40,18 @@ section:has(.add-to-cart) {
 			font-weight: 400;
 			text-decoration: line-through;
 			opacity: 0.5;
+			font-size: 0.75rem;
+
+			&::after {
+				content: " COP";
+				font-weight: 700;
+				font-weight: 300;
+				font-size: 0.75rem;
+			}
 		}
 
 		p {
-			color: var(--ink-400);
+			color: var(--ink-100);
 		}
 
 		&.gradient-border::before {
@@ -144,7 +154,7 @@ section:has(.add-to-cart) {
 				color: var(--pearl);
 				border-radius: var(--radius-min);
 				padding: 0.5rem 1rem;
-				line-height: 1.5;
+				line-height: 1.5rem;
 				width: fit-content;
 				cursor: pointer;
 				align-self: flex-end;

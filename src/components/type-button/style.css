@@ -1,3 +1,9 @@
+@property --angle {
+	syntax: "<angle>";
+	initial-value: -60deg;
+	inherits: false;
+}
+
 .type-selector {
 	flex-direction: row;
 	gap: 0.5rem;
@@ -10,6 +16,8 @@
 		cursor: pointer;
 		font-size: 0.75rem;
 		font-weight: 500;
+		position: relative;
+		line-height: 1rem;
 
 		&.active {
 			background: var(--pearl);
@@ -21,23 +29,67 @@
 			}
 
 			&::after {
-				content: " ✓";
-				color: var(--zima);
-				font-weight: 700;
-			}
-
-			&::before {
-				content: " ";
+				content: "";
 				position: absolute;
 				inset: 0;
 				background: var(--pearl);
-				filter: blur(0.5rem);
 				z-index: -1;
+				border-radius: 0.25rem;
+			}
+
+			&::before {
+				content: "✓ ";
+				color: var(--zima);
+				font-weight: 700;
+				font-size: 0.75rem;
 			}
 		}
 
-		&:hover:not(.active) {
-			background: var(--ink-900);
+		&:not(:hover):not(.active)::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background-image: conic-gradient(
+				from var(--angle),
+				var(--scarlet),
+				var(--amethyst),
+				var(--zima),
+				var(--amethyst),
+				var(--scarlet)
+			);
+			animation: 1s spin ease infinite;
+			z-index: -1;
+			border-radius: 0.25rem;
+			filter: blur(0);
+			opacity: 0;
 		}
+
+		&:hover:not(.active)::after {
+			content: "";
+			position: absolute;
+			inset: -2px;
+			background-image: conic-gradient(
+				from var(--angle),
+				var(--scarlet),
+				var(--amethyst),
+				var(--zima),
+				var(--amethyst),
+				var(--scarlet)
+			);
+			animation: 1s spin ease infinite;
+			z-index: -1;
+			border-radius: 0.25rem;
+			filter: blur(0.25rem);
+			opacity: 1;
+		}
+	}
+}
+
+@keyframes spin {
+	from {
+		--angle: -60deg;
+	}
+	to {
+		--angle: 300deg;
 	}
 }
